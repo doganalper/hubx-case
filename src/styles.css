@@ -1,3 +1,48 @@
-body {
-  display: block;
+@import "tailwindcss";
+
+* {
+  font-family: 'SF Pro Display'; TODO: En son karar vericem
+}
+
+html {
+  @apply bg-[#F5F5F7] w-full h-full;
+}
+
+body,
+#root {
+  @apply m-0 w-full h-full;
+}
+
+main {
+  @apply bg-white h-full;
+  @apply px-6 pt-14;
+}
+
+@layer utilities {
+  .tab-feature-container {
+    @apply flex flex-col items-center;
+    @apply md:items-end md:w-[556px];
+  }
+
+  .tab-feature-subtitle {
+    @apply text-[#0381FF] font-bold tracking-[2px] uppercase font-extrabold;
+  }
+
+  .tab-feature-title {
+    @apply mt-4 text-[32px] leading-10 text-[#0B122A] font-bold;
+  }
+
+  .tab-feature-body {
+    @apply mt-[22px] text-[#0B172A] text-sm text-center leading-7 mb-7;
+    @apply md:text-right md:tracking-[0.8px] md:leading-8 md:text-xl md:font-normal md:mt-5 md:mb-8;
+  }
+
+  .tab-feature-button {
+    @apply w-[100px] h-11 border-[#0000002b] border-[0.37px] text-[#0B122A] text-[14.81px] flex items-center justify-center;
+    @apply md:text-xl md:w-[135px] md:h-[54px];
+  }
+
+  .tab-feature-button span {
+    @apply leading-none;
+  }
 }
