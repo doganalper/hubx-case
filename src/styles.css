@@ -1,21 +1,19 @@
 @import "tailwindcss";
 
 * {
-  font-family: 'SF Pro Display'; TODO: En son karar vericem
+  font-family: 'SF Pro Display';
 }
 
 html {
-  @apply bg-[#F5F5F7] w-full h-full;
+  @apply bg-[#F5F5F7] h-full;
 }
 
-body,
+body {
+  @apply m-0 grid place-items-center h-full;
+}
+
 #root {
-  @apply m-0 w-full h-full;
-}
-
-main {
-  @apply bg-white h-full;
-  @apply px-6 pt-14;
+  @apply w-full;
 }
 
 @layer utilities {
@@ -25,7 +23,7 @@ main {
   }
 
   .tab-feature-subtitle {
-    @apply text-[#0381FF] font-bold tracking-[2px] uppercase font-extrabold;
+    @apply text-[#0381FF] tracking-[2px] uppercase font-extrabold;
   }
 
   .tab-feature-title {
@@ -33,16 +31,85 @@ main {
   }
 
   .tab-feature-body {
-    @apply mt-[22px] text-[#0B172A] text-sm text-center leading-7 mb-7;
+    @apply mt-4 text-[#0B172A] text-sm text-center leading-7 mb-5;
     @apply md:text-right md:tracking-[0.8px] md:leading-8 md:text-xl md:font-normal md:mt-5 md:mb-8;
   }
 
   .tab-feature-button {
-    @apply w-[100px] h-11 border-[#0000002b] border-[0.37px] text-[#0B122A] text-[14.81px] flex items-center justify-center;
+    @apply w-[100px] h-11 border-[#D6D6D6] border-[0.37px] text-[#0B122A] text-[14.81px] flex items-center justify-center cursor-pointer;
     @apply md:text-xl md:w-[135px] md:h-[54px];
   }
 
   .tab-feature-button span {
     @apply leading-none;
+  }
+
+  .tab-navigation-container {
+    @apply bg-white border-b border-[#E4E8EC] overflow-x-auto snap-x snap-mandatory w-screen;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .tab-navigation-container::-webkit-scrollbar {
+    @apply hidden;
+  }
+
+  .tab-navigation-scroll {
+    @apply flex items-center justify-evenly min-w-max divide-x divide-solid divide-[#EBEBEB];
+  }
+
+  .tab-navigation-item {
+    @apply flex flex-row items-center justify-center gap-4 cursor-pointer flex-1 h-[124px] w-[301px] snap-center;
+  }
+
+  .tab-navigation-item.active {
+    @apply bg-[#F7FBFF];
+  }
+
+  .tab-navigation-icon-circle {
+    @apply w-14 h-14 rounded-full bg-white flex items-center justify-center border border-[#EBEBEB];
+  }
+
+  .tab-navigation-active-arc {
+    @apply overflow-visible;
+  }
+
+  .tab-navigation-icon-wrapper {
+    @apply overflow-auto relative w-16 h-16 flex items-center justify-center;
+  }
+
+  .tab-navigation-item.active .tab-navigation-icon-circle {
+    @apply relative
+  }
+
+  .tab-navigation-label {
+    @apply text-xl leading-7 text-[#0B172A];
+  }
+
+  svg * {
+    transition: stroke-dashoffset 0.5s ease, fill 1s ease;
+  }
+
+  .icon-circle-animate {
+    @apply origin-center -rotate-90 stroke-[#0381FF];
+    stroke-dasharray: 360;
+    stroke-dashoffset: -360;
+    stroke-opacity: 1;
+  }
+
+  .tab-navigation-item.active .icon-circle-animate {
+    stroke-dashoffset: 0;
+  }
+
+  .tab-navigation-item.active svg path {
+    @apply fill-[#0381FF];
+  }
+
+  .image-container {
+    @apply relative mx-auto;
+  }
+  
+  .image-container img:not(:first-child) {
+    @apply absolute bottom-0;
   }
 }
