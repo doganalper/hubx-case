@@ -26,9 +26,9 @@ export function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className='overflow-hidden px-7'
+          className='overflow-hidden px-7 md:justify-center md:flex'
         >
-          <div className='flex flex-col gap-10'>
+          <div className='app-container'>
             <TabContent activeTab={activeTab} />
             <TabImageContainer 
               activeTab={activeTab} 

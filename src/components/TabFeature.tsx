@@ -10,7 +10,7 @@ export const TabFeature = ({
   bodyText,
 }: TabFeatureProps) => {
   return (
-    <div className="tab-feature-container">
+    <div className="tab-feature-container md:mt-[6%]">
       <h1 className="tab-feature-subtitle">
         {subtitle}
       </h1>

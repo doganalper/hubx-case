@@ -30,7 +30,7 @@ export const BATCH_SCANNING_ANIMATION: Animation[] = [
             scale: 1.2,
             width: '66.4%',
         },
-        to: { y: '0%', scale: 1, bottom: '-5px' },
+        to: { y: '0%', scale: 1 },
         transition: { duration: 0.3, ease: 'easeOut', delay: 0.8 },
     },
     {
@@ -82,7 +82,7 @@ export const EXPORT_SHARE_ANIMATION: Animation[] = [
             width: '6.6%',
         },
         to: { y: '-100%', left: '-5%', rotate: '0deg' },
-        transition: { duration: 0.5, ease: 'easeOut', delay: 0.5 },
+        transition: { duration: 0.5, ease: 'easeOut', delay: 0.8 },
     },
     {
         from: {
@@ -93,12 +93,12 @@ export const EXPORT_SHARE_ANIMATION: Animation[] = [
             width: '43.5%',
         },
         to: { y: '0%', left: '14%', rotate: '-0deg' },
-        transition: { duration: 0.5, ease: 'easeOut', delay: 0.8 },
+        transition: { duration: 0.5, ease: 'easeOut', delay: 1.1 },
     },
     {
         from: { y: '100%', left: '50%', x: '-50%', width: '35.5%' },
         to: { y: '-25%', left: '50%' },
-        transition: { duration: 0.5, ease: 'easeOut', delay: 1.1 },
+        transition: { duration: 0.5, ease: 'easeOut', delay: 1.4 },
     },
     {
         from: {
@@ -109,6 +109,6 @@ export const EXPORT_SHARE_ANIMATION: Animation[] = [
             width: '43.5%',
         },
         to: { y: '0%', left: '90%', rotate: '-0deg' },
-        transition: { duration: 0.5, ease: 'easeOut', delay: 1.4 },
+        transition: { duration: 0.5, ease: 'easeOut', delay: 1.7 },
     },
 ]

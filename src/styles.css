@@ -47,11 +47,6 @@ body {
   .tab-navigation-container {
     @apply bg-white border-b border-[#E4E8EC] overflow-x-auto snap-x snap-mandatory w-screen;
     -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  .tab-navigation-container::-webkit-scrollbar {
-    @apply hidden;
   }
 
   .tab-navigation-scroll {
@@ -111,5 +106,10 @@ body {
   
   .image-container img:not(:first-child) {
     @apply absolute bottom-0;
+  }
+
+  .app-container {
+    @apply flex flex-col gap-10 md:flex-row-reverse;
+    @apply md:max-w-7xl md:w-full md:min-h-[400px];
   }
 }
