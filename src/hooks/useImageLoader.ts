@@ -14,7 +14,7 @@ export const useImageLoader = () => {
         return loadImage(imageUrl);
       })
     );
-    Promise.all(imagePromises).then(() =>
+    void Promise.all(imagePromises).then(() =>
       setAreImagesLoaded(true)
     );
   }, []);

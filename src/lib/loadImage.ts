@@ -15,7 +15,7 @@ const getImageUrl = (filename: string): string => {
   const entry = Object.entries(imageModules).find(([path]) => 
     path.endsWith(filename)
   );
-  return entry ? (entry[1] as string) : '';
+  return entry ? entry[1] : '';
 };
 
 export const getTabImageUrl = (tabKey: TabKey, imageIndex: number): string => {
