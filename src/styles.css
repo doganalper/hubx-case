@@ -1,25 +1,35 @@
 @import "tailwindcss";
 
-* {
-  font-family: 'SF Pro Display';
+@layer base {
+  * {
+    font-family: 'SF Pro Display';
+  }
+
+  html {
+    @apply bg-[#F5F5F7] h-full;
+  }
+
+  body {
+    @apply m-0 grid place-items-center h-full;
+  }
+
+  #root {
+    @apply w-full;
+  }
+
+  svg * {
+    transition: stroke-dashoffset 0.5s ease, fill 1s ease;
+  }
 }
 
-html {
-  @apply bg-[#F5F5F7] h-full;
-}
+@layer components {
+  .tab-container {
+    @apply overflow-hidden px-12 md:px-7 md:justify-center md:flex;
+  }
 
-body {
-  @apply m-0 grid place-items-center h-full;
-}
-
-#root {
-  @apply w-full;
-}
-
-@layer utilities {
   .tab-feature-container {
     @apply flex flex-col items-center;
-    @apply md:items-end md:w-[556px];
+    @apply md:items-end md:mt-[13%];
   }
 
   .tab-feature-subtitle {
@@ -27,11 +37,11 @@ body {
   }
 
   .tab-feature-title {
-    @apply mt-4 text-[32px] leading-10 text-[#0B122A] font-bold;
+    @apply mt-4 text-[32px] leading-10 text-[#0B122A] font-bold text-center;
   }
 
   .tab-feature-body {
-    @apply mt-4 text-[#0B172A] text-sm text-center leading-7 mb-5;
+    @apply mt-[13px] text-[#0B172A] text-sm text-center leading-7 mb-5;
     @apply md:text-right md:tracking-[0.8px] md:leading-8 md:text-xl md:font-normal md:mt-5 md:mb-8;
   }
 
@@ -50,15 +60,31 @@ body {
   }
 
   .tab-navigation-scroll {
-    @apply flex items-center justify-evenly min-w-max divide-x divide-solid divide-[#EBEBEB];
+    @apply flex items-center justify-evenly min-w-max;
   }
 
   .tab-navigation-item {
-    @apply flex flex-row items-center justify-center gap-4 cursor-pointer flex-1 h-[124px] w-[301px] snap-center;
+    @apply flex flex-row items-center justify-center gap-4 cursor-pointer flex-1 h-[124px] w-[301px] snap-center border border-transparent border-r-[#EBEBEB] transition-colors duration-200;
+  }
+
+  .tab-navigation-item:last-child {
+    @apply border-r-transparent;
+  }
+
+  .tab-navigation-item:hover {
+    @apply border border-[#0381FF];
   }
 
   .tab-navigation-item.active {
     @apply bg-[#F7FBFF];
+  }
+
+  .tab-navigation-item.active .tab-navigation-icon-circle {
+    @apply relative;
+  }
+
+  .tab-navigation-item.active svg path {
+    @apply fill-[#0381FF];
   }
 
   .tab-navigation-icon-circle {
@@ -73,18 +99,26 @@ body {
     @apply overflow-auto relative w-16 h-16 flex items-center justify-center;
   }
 
-  .tab-navigation-item.active .tab-navigation-icon-circle {
-    @apply relative
-  }
-
   .tab-navigation-label {
     @apply text-xl leading-7 text-[#0B172A];
   }
 
-  svg * {
-    transition: stroke-dashoffset 0.5s ease, fill 1s ease;
+  .image-container {
+    @apply relative mx-[10%] justify-self-center;
+    @apply md:order-first md:mx-0;
   }
 
+  .image-container img:not(:first-child) {
+    @apply absolute bottom-0;
+  }
+
+  .app-container {
+    @apply grid gap-10;
+    @apply md:grid-cols-2 md:gap-0 md:max-w-[1400px] md:w-full md:min-h-[400px];
+  }
+}
+
+@layer utilities {
   .icon-circle-animate {
     @apply origin-center -rotate-90 stroke-[#0381FF];
     stroke-dasharray: 360;
@@ -94,22 +128,5 @@ body {
 
   .tab-navigation-item.active .icon-circle-animate {
     stroke-dashoffset: 0;
-  }
-
-  .tab-navigation-item.active svg path {
-    @apply fill-[#0381FF];
-  }
-
-  .image-container {
-    @apply relative mx-auto;
-  }
-  
-  .image-container img:not(:first-child) {
-    @apply absolute bottom-0;
-  }
-
-  .app-container {
-    @apply flex flex-col gap-10 md:flex-row-reverse;
-    @apply md:max-w-7xl md:w-full md:min-h-[400px];
   }
 }

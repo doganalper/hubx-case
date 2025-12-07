@@ -26,12 +26,12 @@ export function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className='overflow-hidden px-7 md:justify-center md:flex'
+          className='tab-container'
         >
           <div className='app-container'>
             <TabContent activeTab={activeTab} />
-            <TabImageContainer 
-              activeTab={activeTab} 
+            <TabImageContainer
+              activeTab={activeTab}
             />
           </div>
         </motion.div>
